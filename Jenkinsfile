@@ -16,9 +16,9 @@ pipeline {
                 script {
                     echo 'Building application...'
                     // Tambahkan perintah build jika diperlukan, misalnya:
-                    sh './gradlew build'  (untuk Gradle)
-                     sh 'mvn package'      (untuk Maven)
-                     sh 'npm install'      (untuk Node.js)
+                    sh './gradlew build'  
+                     sh 'mvn package'      
+                     sh 'npm install'      
                 }
             }
         }
