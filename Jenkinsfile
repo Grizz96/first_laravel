@@ -4,42 +4,41 @@ pipeline {
     stages {
         stage('Check Branch') {
             when {
-                expression { env.BRANCH_NAME == 'master' }
+                expression { env.BRANCH_NAME == 'main' }
             }
             steps {
-                echo 'Branch saat ini adalah master, lanjutkan pipeline...'
+                echo 'Branch saat ini adalah main, lanjutkan pipeline...'
             }
         }
 
         stage('Build') {
             when {
-                expression { env.BRANCH_NAME == 'master' }
+                expression { env.BRANCH_NAME == 'main' }
             }
             steps {
                 echo 'Building project...'
-                // Tambahkan perintah build di sini, misalnya:
+                // Tambahkan perintah build, misalnya:
                 // sh 'mvn clean package'
             }
         }
 
         stage('Test') {
             when {
-                expression { env.BRANCH_NAME == 'master' }
+                expression { env.BRANCH_NAME == 'main' }
             }
             steps {
                 echo 'Running tests...'
-                // Tambahkan perintah test, misalnya:
-                // sh 'mvn test'
+                // Tambahkan perintah test
             }
         }
 
         stage('Deploy') {
             when {
-                expression { env.BRANCH_NAME == 'master' }
+                expression { env.BRANCH_NAME == 'main' }
             }
             steps {
                 echo 'Deploying to production...'
-                // Tambahkan perintah deploy di sini
+                // Tambahkan perintah deploy
             }
         }
     }
